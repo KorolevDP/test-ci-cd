@@ -22,15 +22,26 @@ jobs:
     steps:    
     - name: Run a one-line script in Testing
       run : echo Hello, world in TEST job!
+      
     - name: Run multi-line script in Testing
       run : |
         echo Add other actions to test,
         echo test, and deploy your project.
+        
     - name: Execure few commands
       run : |
         echo "Hello Message1"
         echo "Hello Message2"
         echo "Application name: ${{ env.APPLICATION_NAME }}"
+        
+    - name: List current folder
+      run : ls -la
+
+    - name: Git clone my repo
+      uses: actions/checkout@v1
+
+    - name: List current folder2
+      run : ls -la
       
           
 
@@ -57,3 +68,9 @@ jobs:
 
       - name: Printing Deployment package
         run : echo "Deploy package name is ${{ env.PACKAGE_NAME }}"
+
+      - name: Lets test some packages if the are here 1
+        run : aws --version
+        
+      - name: Lets test some packages if the are here 2
+        run : zip --version
