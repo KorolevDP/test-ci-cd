@@ -56,4 +56,4 @@ jobs:
           echo test, and deploy your project.
 
       - name: Printing Deployment package
-        run : echo "Deploy package name is ${{ env.DEPLOY_PACKAGE_NAME }}"
+        run : echo "Deploy package name is ${{ env.PACKAGE_NAME }}"
